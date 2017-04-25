@@ -6,6 +6,7 @@
     <version>0.2-SNAPSHOT</version>
 
     <name>Env Utilities</name>
+    <description>Utility components for reading properties from environment or system properties in client or server environment.</description>
     <url>https://github.com/adorsys/envutils</url>
     <packaging>pom</packaging>
     <scm>
@@ -20,6 +21,14 @@
             <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
         </license>
     </licenses>
+    <developers>
+        <developer>
+            <name>Francis Pouatcha</name>
+            <email>fpo@adorsys.de</email>
+            <organization>adorsys</organization>
+            <organizationUrl>https://adorsys.de/</organizationUrl>
+        </developer>
+    </developers>
 
     <modules>
         <module>envutils4j</module>
