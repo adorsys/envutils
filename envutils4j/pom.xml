@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>de.adorsys.envutils</groupId>
 		<artifactId>envutils</artifactId>
-		<version>0.2-SNAPSHOT</version>
+		<version>0.2</version>
 	</parent>
 	<artifactId>envutils4j</artifactId>
 	<name>Env Utilities 4 Java</name>
