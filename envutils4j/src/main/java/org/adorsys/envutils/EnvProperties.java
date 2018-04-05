@@ -6,11 +6,26 @@ public class EnvProperties {
 	public static String getEnvOrSysProp(String propName, boolean optional) {
 		String propValue = System.getenv(propName);
 
-		if(StringUtils.isBlank(propValue))propValue = System.getProperty(propName);
+		if(StringUtils.isBlank(propValue)) propValue = System.getProperty(propName);
 		
 		if(StringUtils.isBlank(propValue)) {
 			if (optional)return null;
 			throw new IllegalStateException("Missing Environmen property " + propName);
+		}
+		return propValue;
+	}
+
+	public static String getEnvOrSysProp(String propName, boolean optional, RuntimeException e) {
+		String propValue = System.getenv(propName);
+
+		if(StringUtils.isBlank(propValue))propValue = System.getProperty(propName);
+
+		if(StringUtils.isBlank(propValue)) {
+			if (optional) return null;
+			if(e == null)
+                throw new IllegalStateException("Missing Environmen property " + propName);
+			else
+			    throw e;
 		}
 		return propValue;
 	}
