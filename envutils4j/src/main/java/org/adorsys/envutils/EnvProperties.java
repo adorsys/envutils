@@ -21,8 +21,11 @@ public class EnvProperties {
 		if(StringUtils.isBlank(propValue))propValue = System.getProperty(propName);
 
 		if(StringUtils.isBlank(propValue)) {
-			if (optional || e == null) return null;
-			throw e;
+			if (optional) return null;
+			if(e == null)
+                throw new IllegalStateException("Missing Environmen property " + propName);
+			else
+			    throw e;
 		}
 		return propValue;
 	}
